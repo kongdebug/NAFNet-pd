@@ -21,7 +21,7 @@ OPTIM:
 TRAINING:
   TRAIN_PS: 256
   VAL_PS: 196
-  RESUME: True
+  RESUME: False
   RESUME_PATH: ''
   PRINT_FREQ: 20
   TRAIN_DIR: 'SIDD_Data/train' # path to training data
