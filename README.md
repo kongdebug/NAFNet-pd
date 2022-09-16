@@ -5,7 +5,7 @@
 
 [官方源码](https://github.com/megvii-research/NAFNet)
 
-[AI Studio 脚本项目地址]()
+[AI Studio 脚本项目地址](https://aistudio.baidu.com/aistudio/clusterprojectdetail/4460788)
 
 ## 1. 简介
 
