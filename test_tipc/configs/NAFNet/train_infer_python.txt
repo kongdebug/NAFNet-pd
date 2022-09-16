@@ -1,0 +1,33 @@
+===========================train_params===========================
+model_name:NAFNet
+python:python
+gpu_list:0
+use-gpu:True
+--iter:lite_train_lite_infer=10|whole_train_whole_infer=400000
+--log_dir:./output/
+--batchSize:lite_train_lite_infer=1|whole_train_whole_infer=4
+--pretrained:null
+train_model_name:model_best.pdparams
+--data-path:./test_tipc/data/SIDD_patches/train/
+##
+trainer:norm_train
+norm_train:train.py --data_dir ./test_tipc/data/SIDD_patches/train_mini/ --val_dir ./test_tipc/data/SIDD_patches/val_mini/
+##
+===========================eval_params===========================
+eval:predict.py --model_ckpt ./test_tipc/output/NAFNet/norm_train_gpus_0/models/model_best.pdparams --data_path ./test_tipc/data/SIDD_patches/val_mini/
+##
+===========================infer_params===========================
+--save-inference-dir:./test_tipc/output/
+--pretrained:null
+norm_export:export_model.py --model-dir ./test_tipc/output/NAFNet/norm_train_gpus_0/models/model_best.pdparams
+##
+train_model:./test_tipc/output/NAFNet/norm_train_gpus_0/models/model_best.pdparams
+infer_export:export_model.py --model-dir ./test_tipc/output/NAFNet/norm_train_gpus_0/models/model_best.pdparams
+##
+inference:infer.py
+--use-gpu:True|False
+--batch-size:1
+--model-dir:./test_tipc/output/
+--clean-dir:./test_tipc/data/SIDD_patches/val_mini/gt_crops/ValidationBlocksSrgb_0.png
+--noisy-dir:./test_tipc/data/SIDD_patches/val_mini/input_crops/ValidationBlocksSrgb_0.png
+--benchmark:False
