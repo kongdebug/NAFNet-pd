@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------
-# Modified from HINet (https://github.com/megvii-model/HINet)
+# Modified from NAFNet (https://github.com/megvii-model/NAFNet)
 # Copyright (c) 2021 megvii-model. All Rights Reserved.
 # ------------------------------------------------------------------------
 # Modified from BasicSR (https://github.com/xinntao/BasicSR)

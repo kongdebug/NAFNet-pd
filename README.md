@@ -44,7 +44,7 @@ NAFNet的网络设计和特点如上图所示，采用带跳过连接的UNet作�
     * 将训练图片剪裁为 512x512 patches.
     * 处理后的数据集可于[AI Studio](https://aistudio.baidu.com/aistudio/datasetdetail/149460/0)找到
 
-**注**：为简化操作，可直接使用处理后上传的SIDD数据
+**注**：为简化操作，可直接使用处理后上传的SIDD数据；`NAFNet`与`HINET`均是旷视科技的模型，对SIDD数据均以步长384切割成512×512大小的图像块，故此处数据处理参考[hinet_paddle](https://github.com/youngAt19/hinet_paddle)进行处理
 
 
 ### 复现模型权重
@@ -196,15 +196,18 @@ image_name: ./SIDD_patches/val_mini/input_crops/ValidationBlocksSrgb_0.png, psnr
 pip install  https://paddleocr.bj.bcebos.com/libs/auto_log-1.2.0-py3-none-any.whl
 ```
 
-在linux下，进入 hinet_paddle 文件夹，运行命令：
+在linux下，进入 NAFNet-pd 文件夹，运行命令：
+
+- 获取小批量数据
 
 ```shell
 bash test_tipc/prepare.sh ./test_tipc/configs/NAFNet/train_infer_python.txt 'lite_train_lite_infer'
 ```
+- 训练、测试、导出推理一体化
 
 ```sehll
-bash test_tipc/test_train_inference_python.sh ./test_tipc/configs/HINet/train_infer_python.txt 'lite_train_lite_infer'
+bash test_tipc/test_train_inference_python.sh ./test_tipc/configs/NAFNet/train_infer_python.txt 'lite_train_lite_infer'
 ```
 
 ## 7. 致谢
-感谢[NAFNet-official](https://github.com/megvii-research/NAFNet)、[MIRNet_paddle](https://github.com/sldyns/MIRNet_paddle)以及[hinet_paddle](https://github.com/youngAt19/hinet_paddle#readme)分享了他们的代码，在本次复现过程中提供了帮助，以及AI Studio提供的算力与答疑支持。
+感谢[NAFNet-official](https://github.com/megvii-research/NAFNet)、[MIRNet_paddle](https://github.com/sldyns/MIRNet_paddle)以及[hinet_paddle](https://github.com/youngAt19/hinet_paddle)分享了他们的代码，在本次复现过程中提供了帮助，以及AI Studio提供的算力与答疑支持。

@@ -19,7 +19,7 @@ import paddle.distributed as dist
 from visualdl import LogWriter
 
 
-parser = argparse.ArgumentParser(description="HINet_TIPC_train")
+parser = argparse.ArgumentParser(description="NAFNet_TIPC_train")
 parser.add_argument("--batchSize", type=int, default=8, help="Training batch size")
 parser.add_argument("--iter", type=int, default=16, help="Number of training iterations")
 parser.add_argument("--lr", type=float, default=0.000225, help="Initial learning rate")
