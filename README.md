@@ -170,7 +170,7 @@ python export_model.py --model-dir ../data/data168981/model_best.pdparams --save
 最终在`./inference_output/`文件夹下会生成下面的3个文件：
 
 ```
-output
+inference_output
   |----model.pdiparams     : 模型参数文件
   |----model.pdmodel       : 模型结构文件
   |----model.pdiparams.info: 模型参数信息文件
